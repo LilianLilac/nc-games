@@ -6,6 +6,7 @@ const NavHeader = () => {
   return (
     <>
       <Navbar bg="light" variant="light">
+        <Navbar.Brand href="#home">NC Games</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="/home">HOME</Nav.Link>
           <Nav.Link href="/reviews">REVIEWS</Nav.Link>
