@@ -28,8 +28,9 @@ const Home = () => {
               />
               <Card.Body>
                 <Card.Title>{review.title}</Card.Title>
-                <Card.Text>{review.body}</Card.Text>
-                <Card.Text>By: {review.owner}</Card.Text>
+                <Card.Text>{review.created_at}</Card.Text>
+                <Card.Text>👍 {review.votes}</Card.Text>
+                <Card.Text>{review.comment_count}</Card.Text>
                 <Button variant="info">Read more</Button>
               </Card.Body>
             </Card>
