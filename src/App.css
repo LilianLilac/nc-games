@@ -3,4 +3,21 @@
   background-color: #302f2f;
   color: white;
   min-height: 100vh;
+  font-family: "ars-maquette-web", sans-serif;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content min-content auto;
+}
+
+.Reviews_list {
+  text-align: center;
+  color: black;
+}
+
+.Card {
+  position: relative;
+}
+.Card_img {
+  max-width: fit-content;
+  max-height: fit-content;
 }
