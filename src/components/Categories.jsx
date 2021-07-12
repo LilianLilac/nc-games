@@ -1,7 +1,7 @@
 import React from "react";
 
-const Reviews = () => {
+const Categories = () => {
   return <div></div>;
 };
 
-export default Reviews;
+export default Categories;
