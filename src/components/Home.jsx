@@ -9,7 +9,6 @@ const Home = () => {
   useEffect(() => {
     getReviews().then((reviewsFromApi) => {
       setReviews(reviewsFromApi);
-      console.log(reviewsFromApi);
     });
   }, []);
 

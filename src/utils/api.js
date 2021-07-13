@@ -22,5 +22,5 @@ export const getSingleReview = async (review_id) => {
 
 export const getCommentsByReviewId = async (review_id) => {
   const { data } = await reviewsApi.get(`/reviews/${review_id}/comments`);
-  return data.review;
+  return data.comments;
 };

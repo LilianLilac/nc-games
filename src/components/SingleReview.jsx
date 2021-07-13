@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getSingleReview } from "../utils/api";
+import Comments from "./Comments";
 import Image from "react-bootstrap/Image";
 
 const SingleReview = () => {
@@ -21,9 +22,28 @@ const SingleReview = () => {
       <p>👍 {review.votes}</p>
       <p>Category: {review.category}</p>
       <p>{review.created_at}</p>
-      <p>Comments: {review.comment_count}</p>
+      <section>
+        <p>Comments: {review.comment_count}</p>
+        <Expandable>
+          <Comments />
+        </Expandable>
+      </section>
       <Image className="Review_img" src={review.review_img_url} fluid></Image>
     </main>
+  );
+};
+
+const Expandable = ({ children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleIsOpen = () => {
+    setIsOpen((currOpen) => !currOpen);
+  };
+  return (
+    <div>
+      <button onClick={toggleIsOpen}>{isOpen ? "Close" : "Open"}</button>
+      {isOpen ? children : null}
+    </div>
   );
 };
 
