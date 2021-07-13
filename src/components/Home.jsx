@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getReviews } from "../utils/api";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [reviews, setReviews] = useState([]);
@@ -30,7 +31,7 @@ const Home = () => {
                 <Card.Text>{review.created_at}</Card.Text>
                 <Card.Text>👍 {review.votes}</Card.Text>
                 <Card.Text>{review.comment_count}</Card.Text>
-                <Button variant="info">Read more</Button>
+                <Link to={`/reviews/${review.review_id}`}>Read more</Link>
               </Card.Body>
             </Card>
           </p>

@@ -5,6 +5,7 @@ import NavHeader from "./components/NavHeader";
 import Reviews from "./components/Reviews";
 import Home from "./components/Home";
 import Categories from "./components/Categories";
+import SingleReview from "./components/SingleReview";
 
 const App = () => {
   return (
@@ -17,6 +18,9 @@ const App = () => {
           </Route>
           <Route exact path="/reviews">
             <Reviews />
+          </Route>
+          <Route exact path="/reviews/:review_id">
+            <SingleReview />
           </Route>
           <Route exact path="/categories">
             <Categories />
