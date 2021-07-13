@@ -14,3 +14,8 @@ export const getReviews = async () => {
   const { data } = await reviewsApi.get("/reviews");
   return data.reviews;
 };
+
+export const getSingleReview = async (review_id) => {
+  const { data } = await reviewsApi.get(`/reviews/${review_id}`);
+  return data.review;
+};

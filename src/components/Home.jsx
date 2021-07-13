@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { getReviews } from "../utils/api";
-import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
@@ -16,7 +15,7 @@ const Home = () => {
 
   return (
     <main className="Home">
-      <h1>Reviews:</h1>
+      <h1>Reviews</h1>
       {reviews.map((review) => {
         return (
           <p key={review.review_id} className="Reviews_list">
