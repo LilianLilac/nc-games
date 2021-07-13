@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getSingleReview } from "../utils/api";
 import Comments from "./Comments";
+import VoteOnReview from "./VoteOnReview";
 import Image from "react-bootstrap/Image";
 
 const SingleReview = () => {
@@ -19,7 +20,9 @@ const SingleReview = () => {
       <h1>{review.title}</h1>
       <p>{review.review_body}</p>
       <p>Owner: {review.owner}</p>
-      <p>👍 {review.votes}</p>
+      <p>
+        <VoteOnReview votes={review.votes} review_id={review.review_id} />
+      </p>
       <p>Category: {review.category}</p>
       <p>{review.created_at}</p>
       <section>
