@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { getCategories } from "../utils/api";
 import { Link } from "react-router-dom";
-import Reviews from "./Reviews";
 
-const CategoriesDropdown = () => {
+const Categories = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -12,7 +11,7 @@ const CategoriesDropdown = () => {
     });
   }, []);
   return (
-    <nav className="CategoriesNav">
+    <ul className="CategoriesNav">
       {categories.map((category) => {
         return (
           <Link to={`/reviews/category/${category.slug}`} key={category.slug}>
@@ -20,8 +19,8 @@ const CategoriesDropdown = () => {
           </Link>
         );
       })}
-    </nav>
+    </ul>
   );
 };
 
-export default CategoriesDropdown;
+export default Categories;

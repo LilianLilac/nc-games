@@ -24,6 +24,12 @@ export const getCategories = async () => {
   return data.categories;
 };
 
+export const getReviewsByCat = async (category) => {
+  const { data } = await reviewsApi.get(`/reviews?category=${category}`);
+  console.log(data.reviews);
+  return data.reviews;
+};
+
 export const patchReviewVotes = (review_id, increment) => {
   return axios
     .patch(`https://nc-games-monika.herokuapp.com/api/reviews/${review_id}`, {
