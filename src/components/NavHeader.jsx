@@ -9,23 +9,31 @@ const NavHeader = () => {
       <Navbar sticky="top" bg="light" variant="light">
         <Navbar.Brand href="/home">NC Games</Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="/reviews">REVIEWS</Nav.Link>
-          <Nav.Link href="/categories">CATEGORIES</Nav.Link>
           <NavDropdown title="CATEGORIES" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#action/7.1">Strategy</NavDropdown.Item>
-            <NavDropdown.Item href="#action/7.2">Hidden-roles</NavDropdown.Item>
-            <NavDropdown.Item href="#action/7.3">Dexterity</NavDropdown.Item>
-            <NavDropdown.Item href="#action/7.4">
+            <NavDropdown.Item href="/reviews/strategy">
+              Strategy
+            </NavDropdown.Item>
+            <NavDropdown.Item href="/reviews/hidden-roles">
+              Hidden-roles
+            </NavDropdown.Item>
+            <NavDropdown.Item href="/reviews/dexterity">
+              Dexterity
+            </NavDropdown.Item>
+            <NavDropdown.Item href="/reviews/push-your-luck">
               Push-your-luck
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/7.5">
+            <NavDropdown.Item href="/reviews/roll-and-write">
               Roll-and-write
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/7.6">
+            <NavDropdown.Item href="/reviews/deck-building">
               Deck-building
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/7.7">
+            <NavDropdown.Item href="/reviews/engine-building">
               Engine-building
+            </NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="/categories">
+              See All Categories
             </NavDropdown.Item>
           </NavDropdown>
         </Nav>
