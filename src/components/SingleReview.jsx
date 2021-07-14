@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getSingleReview } from "../utils/api";
 import Comments from "./Comments";
+import CommentAdder from "./CommentAdder";
 import VoteOnReview from "./VoteOnReview";
 import Image from "react-bootstrap/Image";
 
@@ -31,6 +32,9 @@ const SingleReview = () => {
           <Comments />
         </Expandable>
       </section>
+      <p>
+        <CommentAdder />
+      </p>
       <Image className="Review_img" src={review.review_img_url} fluid></Image>
     </main>
   );
@@ -44,7 +48,9 @@ const Expandable = ({ children }) => {
   };
   return (
     <div>
-      <button onClick={toggleIsOpen}>{isOpen ? "Close" : "Open"}</button>
+      <button onClick={toggleIsOpen}>
+        {isOpen ? "Close" : "See comments"}
+      </button>
       {isOpen ? children : null}
     </div>
   );

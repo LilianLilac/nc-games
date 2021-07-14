@@ -20,7 +20,6 @@ const Comments = () => {
             <section key={comment.comment_id}>
               <p>{comment.body}</p>
               <p>Author: {comment.author}</p>
-              <p>{comment.created_at}</p>
               <p>👍 {comment.votes}</p>
             </section>
           );

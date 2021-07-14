@@ -13,9 +13,7 @@ import UserProfile from "./components/UserProfile";
 import RequireLogin from "./components/RequireLogin";
 
 const App = () => {
-  const [user, setUser] = useState({
-    username: "jessjelly",
-  });
+  const [user, setUser] = useState({});
   return (
     <BrowserRouter>
       <UserContext.Provider value={{ user, setUser }}>
