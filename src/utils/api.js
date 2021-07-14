@@ -19,10 +19,9 @@ export const getCommentsByReviewId = async (review_id) => {
   return data.comments;
 };
 
-export const getCategories = () => {
-  reviewsApi.get("/categories").then((response) => {
-    console.log(response.data);
-  });
+export const getCategories = async () => {
+  const { data } = await reviewsApi.get("/categories");
+  return data.categories;
 };
 
 export const patchReviewVotes = (review_id, increment) => {
