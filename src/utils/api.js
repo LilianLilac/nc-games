@@ -27,7 +27,7 @@ export const getCategories = async () => {
 export const patchReviewVotes = (review_id, increment) => {
   return axios
     .patch(`https://nc-games-monika.herokuapp.com/api/reviews/${review_id}`, {
-      incVotes: increment,
+      inc_votes: increment,
     })
     .then((response) => {
       console.log(response.data);

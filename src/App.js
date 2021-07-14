@@ -26,6 +26,7 @@ const App = () => {
           <Route exact path="/reviews/:review_id/comments">
             <Comments />
           </Route>
+          <Route exact path="/reviews/category/:category_name"></Route>
           <Route exact path="/categories">
             <Categories />
           </Route>

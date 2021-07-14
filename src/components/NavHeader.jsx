@@ -10,25 +10,25 @@ const NavHeader = () => {
         <Navbar.Brand href="/home">NC Games</Navbar.Brand>
         <Nav className="mr-auto">
           <NavDropdown title="CATEGORIES" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="/reviews/strategy">
+            <NavDropdown.Item href="/reviews/category/strategy">
               Strategy
             </NavDropdown.Item>
-            <NavDropdown.Item href="/reviews/hidden-roles">
+            <NavDropdown.Item href="/reviews/category/hidden-roles">
               Hidden-roles
             </NavDropdown.Item>
-            <NavDropdown.Item href="/reviews/dexterity">
+            <NavDropdown.Item href="/reviews/category/dexterity">
               Dexterity
             </NavDropdown.Item>
-            <NavDropdown.Item href="/reviews/push-your-luck">
+            <NavDropdown.Item href="/reviews/category/push-your-luck">
               Push-your-luck
             </NavDropdown.Item>
-            <NavDropdown.Item href="/reviews/roll-and-write">
+            <NavDropdown.Item href="/reviews/category/roll-and-write">
               Roll-and-write
             </NavDropdown.Item>
-            <NavDropdown.Item href="/reviews/deck-building">
+            <NavDropdown.Item href="/reviews/category/deck-building">
               Deck-building
             </NavDropdown.Item>
-            <NavDropdown.Item href="/reviews/engine-building">
+            <NavDropdown.Item href="/reviews/category/engine-building">
               Engine-building
             </NavDropdown.Item>
             <NavDropdown.Divider />
