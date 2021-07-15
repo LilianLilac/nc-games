@@ -40,10 +40,26 @@ export const patchReviewVotes = (review_id, increment) => {
     });
 };
 
+// export const postNewComment = (review_id, username, newComment) => {
+//   return axios
+//     .post(
+//       `https://nc-games-monika.herokuapp.com/api/reviews/${review_id}/comments`,
+//       {
+//         author: username,
+//         body: newComment,
+//       }
+//     )
+//     .then((response) => {
+//       console.log(response.data);
+//     });
+// };
+
 export const postNewComment = async (review_id, newComment) => {
+  console.log(newComment);
   const { data } = await reviewsApi.post(
     `/reviews/${review_id}/comments`,
     newComment
   );
-  return data.review;
+  console.log(data.comment);
+  return data.comment;
 };

@@ -12,7 +12,7 @@ const RequireLogin = ({ children }) => {
   if (user.username) return children;
   return (
     <div>
-      <h1>You need to login to post a comment!</h1>
+      <h3>You need to login to post a comment!</h3>
       <form onSubmit={handleSubmit}>
         <button>Login as jessjelly</button>
       </form>

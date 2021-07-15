@@ -10,13 +10,13 @@ const CommentAdder = ({ setComments }) => {
     event.preventDefault();
     const newComment = {
       username: "jessjelly",
-      comment: newCommentBody,
+      body: newCommentBody,
     };
     console.log("posted");
     postNewComment(review_id, newComment).then((newComment) => {
       setComments((currComments) => {
         const newComments = [newComment, ...currComments];
-        console.log(newComments);
+        // console.log(newComments);
         return newComments;
       });
     });

@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getCommentsByReviewId } from "../utils/api";
 
-const Comments = () => {
-  const [comments, setComments] = useState([]);
+const Comments = (props) => {
   const { review_id } = useParams();
+  const setComments = props.setComments;
+  const comments = props.comments;
 
   useEffect(() => {
     getCommentsByReviewId(review_id).then((commentsFromApi) => {

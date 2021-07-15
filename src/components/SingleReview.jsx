@@ -10,6 +10,7 @@ import RequireLogin from "./RequireLogin";
 const SingleReview = () => {
   const [review, setReview] = useState({});
   const { review_id } = useParams();
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
     getSingleReview(review_id).then((reviewFromApi) => {
@@ -30,14 +31,14 @@ const SingleReview = () => {
       <section>
         <p>Comments: {review.comment_count}</p>
         <Expandable>
-          <Comments />
+          <Comments setComments={setComments} comments={comments} />
         </Expandable>
+        <p>
+          <RequireLogin>
+            <CommentAdder setComments={setComments} />
+          </RequireLogin>
+        </p>
       </section>
-      <p>
-        <RequireLogin>
-          <CommentAdder />
-        </RequireLogin>
-      </p>
       <Image className="Review_img" src={review.review_img_url} fluid></Image>
     </main>
   );
