@@ -5,6 +5,7 @@ import Comments from "./Comments";
 import CommentAdder from "./CommentAdder";
 import VoteOnReview from "./VoteOnReview";
 import Image from "react-bootstrap/Image";
+import RequireLogin from "./RequireLogin";
 
 const SingleReview = () => {
   const [review, setReview] = useState({});
@@ -33,7 +34,9 @@ const SingleReview = () => {
         </Expandable>
       </section>
       <p>
-        <CommentAdder />
+        <RequireLogin>
+          <CommentAdder />
+        </RequireLogin>
       </p>
       <Image className="Review_img" src={review.review_img_url} fluid></Image>
     </main>

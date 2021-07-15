@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { NavDropdown } from "react-bootstrap";
+import UserProfile from "./UserProfile";
 
 const NavHeader = () => {
   return (
@@ -36,6 +37,10 @@ const NavHeader = () => {
               See All Categories
             </NavDropdown.Item>
           </NavDropdown>
+          {/* <Navbar.Text>Signed in as:</Navbar.Text>
+          <Nav.Link eventKey="disabled">
+            <UserProfile />
+          </Nav.Link> */}
         </Nav>
       </Navbar>
     </>

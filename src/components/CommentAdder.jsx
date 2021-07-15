@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { postNewComment } from "../utils/api";
 
 const CommentAdder = ({ setComments }) => {
   const [newComment, setNewComment] = useState("");

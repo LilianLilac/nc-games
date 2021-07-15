@@ -40,13 +40,9 @@ export const patchReviewVotes = (review_id, increment) => {
     });
 };
 
-export const postNewComment = async (review_id, { body, username }) => {
-  const { data } = await axios.post(
-    `https://nc-games-monika.herokuapp.com/api/reviews/${review_id}/comments`,
-    {
-      body,
-      username,
-    }
+export const postNewComment = async (review_id, newComment) => {
+  const { data } = await reviewsApi.post(
+    `/reviews/${review_id}/comments`,
+    newComment
   );
-  return data;
 };
