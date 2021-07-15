@@ -16,6 +16,7 @@ const CommentAdder = ({ setComments }) => {
     postNewComment(review_id, newComment).then((newComment) => {
       setComments((currComments) => {
         const newComments = [newComment, ...currComments];
+        console.log(newComments);
         return newComments;
       });
     });

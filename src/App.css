@@ -9,9 +9,19 @@
   grid-template-rows: min-content min-content auto;
 }
 
+.Home {
+  margin: auto;
+  width: 70%;
+}
+
 .Reviews_list {
   text-align: center;
   color: black;
+}
+
+.Review {
+  margin: auto;
+  width: 70%;
 }
 
 .Card {
