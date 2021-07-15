@@ -32,7 +32,7 @@ const App = () => {
             <Route exact path="/reviews/:review_id/comments">
               <Comments />
             </Route>
-            <Route exact path="/reviews/category/:category_name">
+            <Route exact path="/reviews/category/:category">
               <ReviewsByCat />
             </Route>
             <Route exact path="/categories">

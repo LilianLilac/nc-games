@@ -26,7 +26,7 @@ export const getCategories = async () => {
 
 export const getReviewsByCat = async (category) => {
   const { data } = await reviewsApi.get(`/reviews?category=${category}`);
-  // console.log(data.reviews);
+  console.log(data.reviews);
   return data.reviews;
 };
 
@@ -39,20 +39,6 @@ export const patchReviewVotes = (review_id, increment) => {
       console.log(response.data);
     });
 };
-
-// export const postNewComment = (review_id, username, newComment) => {
-//   return axios
-//     .post(
-//       `https://nc-games-monika.herokuapp.com/api/reviews/${review_id}/comments`,
-//       {
-//         author: username,
-//         body: newComment,
-//       }
-//     )
-//     .then((response) => {
-//       console.log(response.data);
-//     });
-// };
 
 export const postNewComment = async (review_id, newComment) => {
   console.log(newComment);

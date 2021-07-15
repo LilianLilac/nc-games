@@ -11,6 +11,7 @@ const ReviewsByCat = () => {
       setReviews(reviewsFromApi);
     });
   }, [category]);
+  console.log(category);
 
   return (
     <div className="Reviews">
