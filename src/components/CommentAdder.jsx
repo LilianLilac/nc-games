@@ -2,25 +2,24 @@ import React, { useState } from "react";
 import { postNewComment } from "../utils/api";
 
 const CommentAdder = ({ setComments }) => {
-  const [newComment, setNewComment] = useState("");
+  const [newCommentBody, setNewCommentBody] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("submitted");
+  };
+
   return (
     <div>
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
-          setComments((currComments) => {
-            const newComments = [...currComments];
-            newComments.push({ body: newComment, author: "username" });
-            return newComments;
-          });
-        }}
-      >
-        <label htmlFor="new-comment">Add comment: </label>
-        <input
-          id="new-comment"
-          value={newComment}
-          onChange={(event) => setNewComment(event.target.value)}
-        ></input>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Add a comment:
+          <textarea
+            value={newCommentBody}
+            onChange={(event) => setNewCommentBody(event.target.value)}
+          ></textarea>
+        </label>
+        <button>Post</button>
         <button>Add Comment</button>
       </form>
     </div>
