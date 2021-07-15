@@ -1,12 +1,24 @@
 import React, { useState } from "react";
 import { postNewComment } from "../utils/api";
+import { useParams } from "react-router-dom";
 
 const CommentAdder = ({ setComments }) => {
   const [newCommentBody, setNewCommentBody] = useState("");
+  const { review_id } = useParams();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("submitted");
+    const newComment = {
+      username: "jessjelly",
+      comment: newCommentBody,
+    };
+    console.log("posted");
+    postNewComment(review_id, newComment).then((newComment) => {
+      setComments((currComments) => {
+        const newComments = [newComment, ...currComments];
+        return newComments;
+      });
+    });
   };
 
   return (
@@ -20,7 +32,6 @@ const CommentAdder = ({ setComments }) => {
           ></textarea>
         </label>
         <button>Post</button>
-        <button>Add Comment</button>
       </form>
     </div>
   );

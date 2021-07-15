@@ -26,7 +26,7 @@ export const getCategories = async () => {
 
 export const getReviewsByCat = async (category) => {
   const { data } = await reviewsApi.get(`/reviews?category=${category}`);
-  console.log(data.reviews);
+  // console.log(data.reviews);
   return data.reviews;
 };
 
@@ -45,4 +45,5 @@ export const postNewComment = async (review_id, newComment) => {
     `/reviews/${review_id}/comments`,
     newComment
   );
+  return data.review;
 };
