@@ -22,10 +22,6 @@ const CommentAdder = ({ setComments }) => {
           return newComments;
         });
       });
-      // .catch((err) => {
-      //   console.log(err.response.data);
-      //   setErrMessage("Something went wrong..");
-      // });
     }
   };
 
