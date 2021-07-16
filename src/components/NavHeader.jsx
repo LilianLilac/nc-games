@@ -32,10 +32,10 @@ const NavHeader = () => {
             <NavDropdown.Item href="/reviews/category/engine-building">
               Engine-building
             </NavDropdown.Item>
-            <NavDropdown.Divider />
+            {/* <NavDropdown.Divider />
             <NavDropdown.Item href="/categories">
               See All Categories
-            </NavDropdown.Item>
+            </NavDropdown.Item> */}
           </NavDropdown>
           {/* <Navbar.Text>Signed in as:</Navbar.Text>
           <Nav.Link eventKey="disabled">
