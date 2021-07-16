@@ -17,7 +17,7 @@ const Home = () => {
       <h1>Reviews</h1>
       {reviews.map((review) => {
         return (
-          <p key={review.review_id} className="Reviews_list">
+          <span key={review.review_id} className="Reviews_list">
             <Card style={{ maxwidth: "10rem" }}>
               <Card.Img
                 variant="top"
@@ -32,7 +32,8 @@ const Home = () => {
                 <Link to={`/reviews/${review.review_id}`}>Read more</Link>
               </Card.Body>
             </Card>
-          </p>
+            <br />
+          </span>
         );
       })}
     </main>
