@@ -12,13 +12,17 @@ const CommentAdder = ({ setComments }) => {
       username: "jessjelly",
       body: newCommentBody,
     };
-    postNewComment(review_id, newComment).then((newComment) => {
-      setComments((currComments) => {
-        const newComments = [newComment, ...currComments];
-        // console.log(newComments);
-        return newComments;
+    if (newComment.body.length < 3) {
+      console.log("Comment too short");
+    } else {
+      postNewComment(review_id, newComment).then((newComment) => {
+        setComments((currComments) => {
+          const newComments = [newComment, ...currComments];
+          // console.log(newComments);
+          return newComments;
+        });
       });
-    });
+    }
   };
 
   return (
