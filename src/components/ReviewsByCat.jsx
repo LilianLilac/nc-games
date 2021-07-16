@@ -12,14 +12,13 @@ const ReviewsByCat = () => {
       setReviews(reviewsFromApi);
     });
   }, [category]);
-  console.log(category);
 
   return (
     <main className="Reviews_by_cat">
       <h1>{`${category} reviews`}</h1>
       {reviews.map((review) => {
         return (
-          <p key={review.review_id} className="Reviews_list">
+          <span key={review.review_id} className="Reviews_list">
             <Card style={{ maxwidth: "10rem" }}>
               <Card.Body>
                 <Card.Title>{review.title}</Card.Title>
@@ -32,7 +31,8 @@ const ReviewsByCat = () => {
                 className="Card_img"
               />
             </Card>
-          </p>
+            <br />
+          </span>
         );
       })}
     </main>

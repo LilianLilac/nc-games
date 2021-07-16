@@ -23,21 +23,21 @@ const SingleReview = () => {
       <h1>{review.title}</h1>
       <p>{review.review_body}</p>
       <p>Owner: {review.owner}</p>
-      <p>
-        <VoteOnReview votes={review.votes} review_id={review.review_id} />
-      </p>
+      <VoteOnReview votes={review.votes} review_id={review.review_id} />
       <p>Category: {review.category}</p>
       <p>{review.created_at}</p>
       <section>
         <p>Comments: {review.comment_count}</p>
         <Expandable>
-          <Comments setComments={setComments} comments={comments} />
+          <Comments
+            setComments={setComments}
+            comments={comments}
+            review_id={review.review_id}
+          />
         </Expandable>
-        <p>
-          <RequireLogin>
-            <CommentAdder setComments={setComments} />
-          </RequireLogin>
-        </p>
+        <RequireLogin>
+          <CommentAdder setComments={setComments} />
+        </RequireLogin>
       </section>
       <Image className="Review_img" src={review.review_img_url} fluid></Image>
     </main>

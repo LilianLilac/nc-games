@@ -4,8 +4,18 @@ const reviewsApi = axios.create({
   baseURL: "https://nc-games-monika.herokuapp.com/api",
 });
 
+// export const getReviews = async () => {
+//   const { data } = await reviewsApi.get("/reviews");
+//   return data.reviews;
+// };
+
 export const getReviews = async () => {
-  const { data } = await reviewsApi.get("/reviews");
+  const { data } = await reviewsApi.get("/reviews", {
+    params: {
+      order: "asc",
+      sort_by: "created_at",
+    },
+  });
   return data.reviews;
 };
 
@@ -16,6 +26,7 @@ export const getSingleReview = async (review_id) => {
 
 export const getCommentsByReviewId = async (review_id) => {
   const { data } = await reviewsApi.get(`/reviews/${review_id}/comments`);
+  console.log(data.comments);
   return data.comments;
 };
 

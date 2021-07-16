@@ -11,21 +11,19 @@ const Comments = (props) => {
     getCommentsByReviewId(review_id).then((commentsFromApi) => {
       setComments(commentsFromApi);
     });
-  }, [review_id]);
+  }, [review_id, setComments]);
 
   return (
     <main className="Comments">
-      <ul>
-        {comments.map((comment) => {
-          return (
-            <section key={comment.comment_id}>
-              <p>{comment.body}</p>
-              <p>Author: {comment.author}</p>
-              <p>👍 {comment.votes}</p>
-            </section>
-          );
-        })}
-      </ul>
+      {comments.map((comment) => {
+        return (
+          <section key={comment.comment_id}>
+            <p>{comment.body}</p>
+            <p>Author: {comment.author}</p>
+            <p>👍 {comment.votes}</p>
+          </section>
+        );
+      })}
     </main>
   );
 };
