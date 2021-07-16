@@ -12,7 +12,6 @@ const CommentAdder = ({ setComments }) => {
       username: "jessjelly",
       body: newCommentBody,
     };
-    console.log("posted");
     postNewComment(review_id, newComment).then((newComment) => {
       setComments((currComments) => {
         const newComments = [newComment, ...currComments];
