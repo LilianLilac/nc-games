@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 const CommentAdder = ({ setComments }) => {
   const [newCommentBody, setNewCommentBody] = useState("");
   const { review_id } = useParams();
+  const [errMessage, setErrMessage] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -13,15 +14,18 @@ const CommentAdder = ({ setComments }) => {
       body: newCommentBody,
     };
     if (newComment.body.length < 3) {
-      console.log("Comment too short");
+      setErrMessage("Comment too short!");
     } else {
       postNewComment(review_id, newComment).then((newComment) => {
         setComments((currComments) => {
           const newComments = [newComment, ...currComments];
-          // console.log(newComments);
           return newComments;
         });
       });
+      // .catch((err) => {
+      //   console.log(err.response.data);
+      //   setErrMessage("Something went wrong..");
+      // });
     }
   };
 
@@ -35,6 +39,7 @@ const CommentAdder = ({ setComments }) => {
             onChange={(event) => setNewCommentBody(event.target.value)}
           ></textarea>
         </label>
+        {errMessage ? <p>{errMessage}</p> : null}
         <button>Post</button>
       </form>
     </div>
