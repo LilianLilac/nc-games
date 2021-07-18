@@ -8,7 +8,7 @@ Northcoders Games has game reviews which are divided into categories. Each revie
 
 All data come from own implementation of the NC Games API server available [here](https://nc-games-monika.herokuapp.com/api) and git repository [here](https://github.com/LilianLilac/be-nc-games).
 
-All front end implementation of the NC Games available [here](https://placeholder) and git repository [here](https://github.com/LilianLilac/nc-games).
+All front end implementation of the NC Games available [here](https://nc-games-monika.netlify.app/) and git repository [here](https://github.com/LilianLilac/nc-games).
 
 ## Setup
 
