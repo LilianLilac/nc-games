@@ -4,7 +4,7 @@
 
 Northcoders Games is a social games content rating, and discussion website developed with React and React-Bootstrap.
 
-Northcoders Games has game reviews which are divided into categories. Each review has user curated ratings and can be up or down voted using the API. Users can also add comments about a review.
+Northcoders Games has game reviews which are divided into categories. Each review has user curated ratings and can be voted using the API. Users can also add comments about a review.
 
 All data come from own implementation of the NC Games API server available [here](https://nc-games-monika.herokuapp.com/api) and git repository [here](https://github.com/LilianLilac/be-nc-games).
 
@@ -12,7 +12,15 @@ All front end implementation of the NC Games available [here](https://nc-games-m
 
 ## Setup
 
-You will need npm and git installed before being able to run this project.
+You will need Node.js, npm and git installed before being able to run this project.
+
+- To check if Node.js is installed on your machine open a terminal window and enter:
+
+```
+ $ node -v
+```
+
+If you do not already have Node.js installed follow the instructions on [this guide](https://docs.npmjs.com/getting-started).
 
 - To check if `npm` is installed on your machine enter this command in you terminal window:
 
