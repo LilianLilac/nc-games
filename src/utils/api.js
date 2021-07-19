@@ -49,5 +49,6 @@ export const postNewComment = async (review_id, newComment) => {
     `/reviews/${review_id}/comments`,
     newComment
   );
+  console.log(data.comment);
   return data.comment;
 };

@@ -15,10 +15,15 @@ const Categories = () => {
   if (isLoading) return <p>Loading...</p>;
   return (
     <ul className="CategoriesNav">
+      Select category to see reviews:
+      <br></br>
+      <br></br>
       {categories.map((category) => {
         return (
           <Link to={`/reviews/category/${category.slug}`} key={category.slug}>
             {category.slug}
+            <br></br>
+            <br></br>
           </Link>
         );
       })}
