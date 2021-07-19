@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getReviewsByCat } from "../utils/api";
 import Card from "react-bootstrap/Card";
+import VoteOnReview from "./VoteOnReview";
 
 const ReviewsByCat = () => {
   const [reviews, setReviews] = useState([]);
@@ -28,6 +29,7 @@ const ReviewsByCat = () => {
                 <Card.Text>{review.review_body}</Card.Text>
                 <Card.Text>Author: {review.owner}</Card.Text>
               </Card.Body>
+              <VoteOnReview votes={review.votes} review_id={review.review_id} />
               <Card.Img
                 variant="top"
                 src={review.review_img_url}
