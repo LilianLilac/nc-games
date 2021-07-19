@@ -5,13 +5,16 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   const [reviews, setReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getReviews().then((reviewsFromApi) => {
       setReviews(reviewsFromApi);
+      setIsLoading(false);
     });
   }, []);
 
+  if (isLoading) return <p>Loading...</p>;
   return (
     <main className="Home">
       <h1>Reviews</h1>
