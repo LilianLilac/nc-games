@@ -6,13 +6,16 @@ import Card from "react-bootstrap/Card";
 const ReviewsByCat = () => {
   const [reviews, setReviews] = useState([]);
   const { category } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getReviewsByCat(category).then((reviewsFromApi) => {
       setReviews(reviewsFromApi);
+      setIsLoading(false);
     });
   }, [category]);
 
+  if (isLoading) return <p>Loading...</p>;
   return (
     <main className="Reviews_by_cat">
       <h1>{`${category} reviews`}</h1>

@@ -4,12 +4,15 @@ import { Link } from "react-router-dom";
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getCategories().then((categoriesFromApi) => {
       setCategories(categoriesFromApi);
+      setIsLoading(false);
     });
   }, []);
+  if (isLoading) return <p>Loading...</p>;
   return (
     <ul className="CategoriesNav">
       {categories.map((category) => {
