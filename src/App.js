@@ -9,7 +9,7 @@ import SingleReview from "./components/SingleReview";
 import Comments from "./components/Comments";
 import ReviewsByCat from "./components/ReviewsByCat";
 import { UserContext } from "./contexts/User";
-import UserProfile from "./components/UserProfile";
+// import UserProfile from "./components/UserProfile";
 
 const App = () => {
   const [user, setUser] = useState({});
@@ -18,7 +18,7 @@ const App = () => {
       <UserContext.Provider value={{ user, setUser }}>
         <div className="App">
           <NavHeader />
-          <UserProfile />
+          {/* <UserProfile /> */}
           <Switch>
             <Route exact path="/home">
               <Home />
